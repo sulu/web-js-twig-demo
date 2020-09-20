@@ -1,0 +1,10 @@
+{
+    "name": "sulu/web-js-twig-demo",
+    "description": "A simple demo for using web-js and web-twig for creating components.",
+    "type": "project",
+    "require": {
+        "twig/twig": "^3.0",
+        "sulu/web-twig": "^2.3"
+    },
+    "license": "MIT"
+}

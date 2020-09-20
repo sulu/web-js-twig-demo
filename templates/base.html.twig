@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <nav>
+
+    </nav>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!--
+        For not blocking the page rendering we load the javascript asnyc.
+        For this we set just a variable which component should be started.
+
+        In our js (index.js) "web.startComponents(webJsComponents);" will
+        actually start our components.
+    -->
+    <script>
+        var webJsComponents = {{ get_components() }};
+    </script>
+    <script src="/build/website/index.min.js" async></script>
+</body>
+</html>
