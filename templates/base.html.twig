@@ -2,15 +2,52 @@
 <html lang="en">
 <head>
     <title>{% block title %}{% endblock %}</title>
+    <style>
+        .wrapper {
+            max-width: 1024px;
+            margin: 0 auto;
+        }
+
+        .ratio-16x9 {
+            position: relative;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+        }
+
+        .ratio-16x9 > div {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .code {
+            background: #ccc;
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
     <nav>
 
     </nav>
 
-    <main>
+    <main class="wrapper">
         {% block content %}{% endblock %}
     </main>
+
+    {# we are loading the google maps JS when the render page requires it #}
+    {% if 'map' in get_component_list() %}
+        <script>
+            /* Google map callback function to initialize all maps correctly */
+            window.initMaps = [];
+            window.initMap = () => {
+                window.initMaps.forEach(function(callback) { callback(); });
+                window.initMaps = null;
+            };
+        </script>
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap&libraries=&v=weekly" async></script>
+    {% endif %}
 
     <!--
         For not blocking the page rendering we load the javascript asnyc.

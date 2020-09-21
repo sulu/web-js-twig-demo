@@ -3,9 +3,7 @@
 require \dirname(__DIR__) . '/vendor/autoload.php';
 
 $loader = new \Twig\Loader\FilesystemLoader(\dirname(__DIR__) . '/templates');
-$twig = new \Twig\Environment($loader, [
-    'cache' => \dirname(__DIR__) . '/var/twig/compilation_cache',
-]);
+$twig = new \Twig\Environment($loader);
 
 // add sulu/web-twig extensions
 // @see https://github.com/sulu/web-twig/blob/master/docs/component.md
