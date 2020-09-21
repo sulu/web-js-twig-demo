@@ -1,0 +1,31 @@
+{
+  "name": "@sulu/web-js-twig-demo",
+  "version": "1.0.0",
+  "description": "A simple demo for using web-js and web-twig for creating components.",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack js/index.js -o ../../public/build/website/index.min.js --module-bind js=babel-loader -p --display-modules --sort-modules-by size"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sulu/web": "^2.0.0",
+    "jquery": "^3.5.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/preset-env": "^7.11.5",
+    "babel-loader": "^8.1.0",
+    "core-js": "^3.6.5",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
+  },
+  "browserslist": [
+    "> 1% in alt-EU",
+    "last 2 versions"
+  ],
+  "engines": {
+    "node": "^12.0"
+  }
+}
