@@ -2,4 +2,18 @@
 
 {% block content %}
     <h1>Welcome to the Web-JS/Web-Twig Demo site</h1>
+
+    <section>
+        <h2>Google Maps</h2>
+
+        <div class="ratio-16x9">
+            <div id="{{ register_component('map', { latitude: 46.844166666667, longitude: 10.118333333333 }) }}"></div>
+        </div>
+
+        <pre class="code">
+            {{- '<div id="{{ register_component(\'map\', { latitude: 46.844166666667, longitude: 10.118333333333 }) }}"></div>'|e -}}
+        </pre>
+
+        See <a href="https://github.com/sulu/web-js-twig-demo/pull/3">https://github.com/sulu/web-js-twig-demo/pull/3</a>
+    </section>
 {% endblock %}
